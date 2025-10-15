@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Sparkles, Zap, Layers } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
   const [glowIntensity, setGlowIntensity] = useState(0);
+  const navigate = useNavigate(); // <-- THIS IS MISSING
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -15,14 +18,14 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0A0B14] text-[#E6E9F0] font-['Inter',sans-serif] overflow-hidden">
       {/* Gradient Navbar */}
-      <motion.nav 
+      <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-50 backdrop-blur-xl bg-gradient-to-r from-[#0A0B14]/80 via-[#0A0B14]/60 to-[#0A0B14]/80 border-b border-[#5B8DEF]/20"
       >
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400 }}
@@ -111,9 +114,9 @@ const Home = () => {
             className="text-6xl md:text-8xl font-bold leading-tight"
           >
             <span className="relative inline-block">
-              <span 
+              <span
                 className="absolute inset-0 bg-gradient-to-r from-[#5B8DEF] to-[#9A7DFF] blur-2xl opacity-50"
-                style={{ 
+                style={{
                   transform: `scale(${1 + glowIntensity * 0.002})`,
                   transition: 'transform 0.05s ease-out'
                 }}
@@ -145,6 +148,7 @@ const Home = () => {
           >
             {/* Primary Button */}
             <motion.button
+              onClick={() => navigate("/editor")} // <-- add onClick here
               whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(91, 141, 239, 0.6)" }}
               whileTap={{ scale: 0.95 }}
               className="relative group px-10 py-5 rounded-2xl overflow-hidden font-semibold text-lg"
@@ -156,6 +160,7 @@ const Home = () => {
                 <Code2 className="w-5 h-5" />
               </span>
             </motion.button>
+
 
             {/* Secondary Button */}
             <motion.button
