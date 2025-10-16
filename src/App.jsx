@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import EditorPage from "./components/EditorPage";
 import './App.css';
 import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/editor" element={<EditorPage />} />
-                <Route path="/login" element={<Login />} />
-
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );
