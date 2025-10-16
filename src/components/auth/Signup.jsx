@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   const [username, setUsername] = useState('');
@@ -283,15 +284,15 @@ export default function Signup() {
               <span className="text-sm" style={{ color: '#9CA3AF' }}>
                 Already have an account?{' '}
               </span>
-              <a
-                href="#"
+              <Link
+                to="/login"
                 className="text-sm font-semibold transition-colors duration-200"
                 style={{ color: '#3A7CFD' }}
                 onMouseEnter={(e) => (e.target.style.color = '#6AA8FF')}
                 onMouseLeave={(e) => (e.target.style.color = '#3A7CFD')}
               >
                 Login
-              </a>
+              </Link>
             </div>
           </form>
         </div>

@@ -54,6 +54,7 @@ const Home = () => {
               </motion.a>
             ))}
             <motion.button
+            onClick={() => navigate("/login")} 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-5 py-2 rounded-full bg-gradient-to-r from-[#5B8DEF]/20 to-[#9A7DFF]/20 border border-[#5B8DEF]/40 hover:border-[#5B8DEF] transition-all duration-300 font-medium"

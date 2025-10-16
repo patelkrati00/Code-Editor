@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState('');
@@ -170,39 +171,39 @@ export default function Login() {
                                 Forgot password?
                             </a>
                         </div>
-{/* Login Button */}
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 relative overflow-hidden group"
-              style={{
-                background: 'linear-gradient(135deg, #1E3A8A, #2563EB)',
-              }}
-            >
-              <span className="relative z-10">Login</span>
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: 'linear-gradient(135deg, #2563EB, #3B82F6)',
-                }}
-              />
-            </motion.button>
+                        {/* Login Button */}
+                        <motion.button
+                            type="submit"
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="w-full py-3 rounded-lg font-semibold text-white transition-all duration-300 relative overflow-hidden group"
+                            style={{
+                                background: 'linear-gradient(135deg, #1E3A8A, #2563EB)',
+                            }}
+                        >
+                            <span className="relative z-10">Login</span>
+                            <div
+                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                style={{
+                                    background: 'linear-gradient(135deg, #2563EB, #3B82F6)',
+                                }}
+                            />
+                        </motion.button>
 
                         {/* Create Account */}
                         <div className="text-center">
                             <span className="text-sm" style={{ color: '#9CA3AF' }}>
                                 Don't have an account?{' '}
                             </span>
-                            <a
-                                href="#"
+                            <Link
+                                to="/signup"
                                 className="text-sm font-semibold transition-colors duration-200"
                                 style={{ color: '#3A7CFD' }}
                                 onMouseEnter={(e) => (e.target.style.color = '#6AA8FF')}
                                 onMouseLeave={(e) => (e.target.style.color = '#3A7CFD')}
                             >
                                 Create Account
-                            </a>
+                            </Link>
                         </div>
 
                     </form>
